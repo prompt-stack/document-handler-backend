@@ -10,15 +10,21 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "aws-sdk": "^2.1693.0",
+    "bcrypt": "^6.0.0",
     "dotenv": "^17.4.2",
     "ejs": "^3.1.10",
     "express": "^4.21.1",
     "express-session": "^1.18.1",
-    "openid-client": "^5.7.0"
+    "mysql2": "^3.22.3",
+    "openid-client": "^5.7.0",
+    "sequelize": "^6.37.8"
   },
   "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
     "@types/express": "^5.0.6",
     "@types/node": "^25.6.0",
+    "@types/sequelize": "^4.28.20",
     "nodemon": "^3.1.14",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3"

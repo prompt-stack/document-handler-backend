@@ -1,6 +1,9 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import { routes } from "./controller";
 import { config } from "dotenv";
+import { dbConnection } from "./config/dbConfig";
+import sequelize from './config/dbConfig';
+import { insertDefaultUser } from "./config/defaultUser";
 
 config();
 
@@ -13,3 +16,10 @@ app.use(routes);
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
+(async () => {
+  await dbConnection();
+  await sequelize.sync({ alter: true });
+  await insertDefaultUser()
+  console.log('All models synced!');
+})();

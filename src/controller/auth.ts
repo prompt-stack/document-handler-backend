@@ -1,13 +1,11 @@
 import { Request, Response, Router } from "express";
+import { authService } from "../services/authService";
 
 const BASE_PATH = "/auth"
 const authRoutes = Router()
 
 authRoutes.post(`${BASE_PATH}/login`, (req: Request, res: Response) => {
-    const requestBody = req.body;
-    console.log({ requestBody });
-    
-    res.send("Login endpoint");
+    return authService.loginService(req, res);
 });
 
 export default authRoutes;
