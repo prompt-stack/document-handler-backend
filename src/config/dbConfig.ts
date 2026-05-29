@@ -1,4 +1,3 @@
-// src/config/dbConfig.ts
 import { Sequelize } from 'sequelize';
 import { config } from "dotenv";
 
